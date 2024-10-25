@@ -20,8 +20,9 @@ def only_me_check(bot: Bot):
 
 try:
     require("nonebot_plugin_alconna")
-    import patch_alconna
     from nonebot.plugin import inherit_supported_adapters
+
+    from .patch_alconna import *
 
     supported_adapters = inherit_supported_adapters("nonebot_plugin_alconna")
 except RuntimeError:
