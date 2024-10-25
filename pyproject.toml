@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "nonebot-plugin-omb"
+version = "0.1.0"
+description = "ohh my bot!"
+authors = ["eya46 <61458340+eya46@users.noreply.github.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+nonebot2 = "^2.3.0"
+nonebot-adapter-onebot = "^2.1.0"
+nonebot-plugin-alconna = { version = ">=0.53.0", optional = true }
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.1"
+
+[tool.poetry.extras]
+alconna = ["nonebot-plugin-alconna"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 121
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "C", "T", "PYI", "PT", "Q", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+length-sort = true
+force-sort-within-sections = true
