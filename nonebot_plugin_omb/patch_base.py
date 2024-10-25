@@ -48,3 +48,6 @@ def patch_on_command(
         **kwargs,
         _depth=_depth + 1,  # type:ignore
     )
+
+
+__all__ = []

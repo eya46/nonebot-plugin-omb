@@ -5,6 +5,7 @@ from nonebot.exception import IgnoredException
 from nonebot.adapters.onebot.v11 import Bot as V11Bot
 
 from .util import SUPERUSERS
+from .patch_base import *
 
 supported_adapters = set()
 

@@ -38,3 +38,5 @@ class MyExtension(Extension):
 
 
 ExtensionExecutor.globals.append(MyExtension)
+
+__all__ = []
