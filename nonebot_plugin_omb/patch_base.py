@@ -1,7 +1,7 @@
 from typing import Union, Optional
 
 import nonebot
-from nonebot import on_message
+from nonebot import logger, on_message
 from nonebot.rule import command
 from nonebot.typing import T_RuleChecker
 from nonebot.internal.rule import Rule
@@ -46,3 +46,6 @@ def patch_on_command(
         **kwargs,
         _depth=_depth + 1,  # type:ignore
     )
+
+
+logger.success("Patch nonebot on_command successfully.")

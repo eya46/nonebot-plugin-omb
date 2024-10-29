@@ -15,7 +15,14 @@
 
 ## 作用
 
-只响应 `SUPERUSER` 的消息!
+通过patch `on_command` 和 `on_alconna`, 注入 `SuperUserRule`
+
+- patch `on_command` 使 `bot` 只响应 `SuperUser` 的命令
+
+> 从 `nonebot.plugin.on import on_command` 导入的没法patch, 请使用 `nonebot.on_command` 导入
+
+- patch `on_alconna` 使 `bot` 只响应 `SuperUser` 的消息
+
 
 ## 安装方式
 
@@ -27,9 +34,8 @@
 
 > 在 `bot.py` 中添加 `nonebot.load_plugin("nonebot_plugin_omb")`
 
-### nb-cli
 
-- `nb plugin install nonebot-plugin-omb`
+**⚠️ 请确保 `nonebot_plugin_omb` 加载优先级高于其他插件**
 
 ## 配置项
 
