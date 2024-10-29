@@ -1,20 +1,9 @@
-from nonebot import Bot, require
+from nonebot import require
 from nonebot.plugin import PluginMetadata
-from nonebot.message import event_preprocessor
-from nonebot.exception import IgnoredException
-from nonebot.internal.adapter import Event
-
-from .util import SuperUserObj
 
 require("nonebot_plugin_omb.patch_base")
 
 supported_adapters = None
-
-
-@event_preprocessor
-async def only_me_check(bot: Bot, event: Event):
-    if not await SuperUserObj(bot, event):
-        raise IgnoredException("only superuser!")
 
 
 try:
