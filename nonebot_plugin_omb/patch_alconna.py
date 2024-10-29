@@ -34,7 +34,7 @@ class MyExtension(Extension):
         return 0
 
     async def permission_check(self, bot: Bot, event: Event, command: Alconna) -> bool:
-        return SuperUserObj(bot, event)
+        return await SuperUserObj(bot, event)
 
 
 ExtensionExecutor.globals.append(MyExtension)

@@ -12,8 +12,8 @@ supported_adapters = None
 
 
 @event_preprocessor
-def only_me_check(bot: Bot, event: Event):
-    if not SuperUserObj(bot, event):
+async def only_me_check(bot: Bot, event: Event):
+    if not await SuperUserObj(bot, event):
         raise IgnoredException("only superuser!")
 
 
