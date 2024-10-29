@@ -9,7 +9,7 @@ from nonebot.internal.adapter import Event
 from nonebot.internal.permission import Permission
 from nonebot_plugin_alconna.extension import Extension, ExtensionExecutor
 
-from nonebot_plugin_omb.util import SUPERUSERS, patch
+from nonebot_plugin_omb.util import SuperUserObj, patch
 
 _raw_on_alconna = nonebot_plugin_alconna.on_alconna
 
@@ -34,9 +34,7 @@ class MyExtension(Extension):
         return 0
 
     async def permission_check(self, bot: Bot, event: Event, command: Alconna) -> bool:
-        return event.get_user_id() in SUPERUSERS
+        return SuperUserObj(bot, event)
 
 
 ExtensionExecutor.globals.append(MyExtension)
-
-__all__ = []

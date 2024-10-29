@@ -4,16 +4,14 @@ import nonebot
 from nonebot import on_message
 from nonebot.rule import command
 from nonebot.typing import T_RuleChecker
-from nonebot.permission import SuperUser
 from nonebot.internal.rule import Rule
 from nonebot.internal.matcher import Matcher
 
-from .util import patch
-
-OnlyMe = Rule(SuperUser())
+from .util import SuperUserRule, patch
 
 
 @patch(nonebot, name="on_command")
+@patch(nonebot.plugin, name="on_command")
 def patch_on_command(
     cmd: Union[str, tuple[str, ...]],
     rule: Optional[Union[Rule, T_RuleChecker]] = None,
@@ -42,12 +40,9 @@ def patch_on_command(
 
     commands = {cmd} | (aliases or set())
     kwargs.setdefault("block", False)
-    rule = rule & OnlyMe if rule else OnlyMe
+    rule = rule & SuperUserRule if rule else SuperUserRule
     return on_message(
         command(*commands, force_whitespace=force_whitespace) & rule,
         **kwargs,
         _depth=_depth + 1,  # type:ignore
     )
-
-
-__all__ = []

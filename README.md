@@ -15,7 +15,7 @@
 
 ## 作用
 
-在 `onebot v11` 和 `nonebot-plugin-alconna` 只响应 `SUPERUSER` 的消息
+只响应 `SUPERUSER` 的消息!
 
 ## 安装方式
 
@@ -36,7 +36,7 @@
 ### 必要配置项
 
 ```env
-# 在 nonebot-plugin-alconna>=0.53.0 版本中, 务必配置
+# 在 nonebot-plugin-alconna>=0.53.0 版本中, 推荐配置
 ALCONNA_RESPONSE_SELF=True
 
 # 记得配置 SUPERUSERS

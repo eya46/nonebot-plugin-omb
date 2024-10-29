@@ -2,9 +2,11 @@ from types import FunctionType
 from typing import Optional
 from collections.abc import Callable
 
-from nonebot import get_driver
+from nonebot.permission import SuperUser
+from nonebot.internal.rule import Rule
 
-SUPERUSERS = get_driver().config.superusers
+SuperUserObj = SuperUser()
+SuperUserRule = Rule(SuperUserObj)
 
 
 def patch(obj, pre: Optional[Callable] = None, name: Optional[str] = None):
