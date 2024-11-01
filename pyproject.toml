@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-omb"
-version = "0.1.7"
+version = "0.1.8"
 description = "ohh my bot!"
 authors = ["eya46 <61458340+eya46@users.noreply.github.com>"]
 readme = "README.md"
@@ -9,7 +9,6 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.9"
 nonebot2 = "^2.3.0"
-nonebot-adapter-onebot = "^2.1.0"
 nonebot-plugin-alconna = { version = ">=0.53.0", optional = true }
 
 
