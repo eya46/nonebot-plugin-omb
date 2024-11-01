@@ -42,11 +42,10 @@
 ### 必要配置项
 
 ```env
-# 在 nonebot-plugin-alconna>=0.53.0 版本中, 推荐配置
+# 在 nonebot-plugin-alconna>=0.53.0 版本中, 推荐配置(响应Bot的消息)
 ALCONNA_RESPONSE_SELF=True
 
 # 记得配置 SUPERUSERS
-# 仅测试下面这种配置方式
 SUPERUSERS=["xxxxxx"]
 ```
 
@@ -55,6 +54,5 @@ SUPERUSERS=["xxxxxx"]
 ```toml
 python = "^3.9"
 nonebot2 = "^2.3.0"
-nonebot-adapter-onebot = "^2.1.0"
 nonebot-plugin-alconna = { version = ">=0.53.0", optional = true }
 ```
