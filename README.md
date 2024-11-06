@@ -22,6 +22,7 @@
 > 从 `nonebot.plugin.on import on_command` 导入的没法patch, 请使用 `nonebot.on_command` 导入
 
 - patch `on_alconna` 使 `bot` 只响应 `SuperUser` 的消息
+- `ExtensionExecutor.globals.append(OmbExtension)`, 判断是否为 `SuperUser` 的消息
 
 
 ## 安装方式
